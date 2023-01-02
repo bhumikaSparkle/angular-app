@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { routes } from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'to-do-app';
+  title = 'Todo App';
+  routes = routes;
+  isDarkTheme:boolean = true;
 }
