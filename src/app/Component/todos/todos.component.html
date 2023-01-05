@@ -1,6 +1,40 @@
-<div class="mat-typography">
-    <h1 class="mat-headline-3">todos works!</h1>
-    <h1>todos works!</h1>
-    <h2>todos works!</h2>
-    <h3>todos works!</h3>
+<div class="mat-typography" class="full-width">
+  <form class="todo_form" class="full-width">
+    <mat-card class="form_card">
+      <mat-card-header>
+        <mat-card-title>My Todo App</mat-card-title>
+        <mat-card-subtitle>Make your to do list</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Todo Title</mat-label>
+              <input matInput placeholder="Title" />
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Textarea</mat-label>
+              <textarea matInput></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button mat-raised-button="" color="primary">Save</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <!-- <mat-form-field appearance="outline">
+          <mat-label>Outline form field</mat-label>
+          <input matInput placeholder="Placeholder" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field> -->
+  </form>
 </div>

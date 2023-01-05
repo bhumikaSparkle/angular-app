@@ -1,36 +1,64 @@
+<header>
+  <mat-toolbar color="primary">
+    <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{ title }}</span>
+    <span class="example-spacer"></span>
+    <mat-slide-toggle
+      [(ngModel)]="isDarkTheme"
+      (change)="storeThemeSelection()"
+      labelPosition="before"
+    >
+      <mat-icon color="white">dark_mode</mat-icon>
+    </mat-slide-toggle>
+  </mat-toolbar>
+</header>
 
- <mat-toolbar color="primary">
-    <button  mat-icon-button 
-           aria-label="Menu"
-           (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>  
-  <span>{{title}}</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
-  <mat-slide-toggle [(ngModel)]="isDarkTheme">Slide me!</mat-slide-toggle>
-</mat-toolbar>
-<mat-sidenav-container [ngClass]="{'dark-theme': isDarkTheme}" class="mat-app-background">
-  <mat-sidenav #sidenav mode="side">
-    <mat-nav-list>
-      <a *ngFor="let route of routes"
-         mat-list-item  
-         [routerLink]="route.path" 
-         (click)="sidenav.toggle()"> {{route.label}}</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 100vh;">
-       
-    <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-<app-footer></app-footer>
+<main class="main_wrapper">
+  <mat-sidenav-container [ngClass]="{ 'dark-theme': isDarkTheme }" class="mat-app-background">
+    <mat-sidenav #sidenav mode="side">
+      <mat-nav-list>
+        <!-- <a
+          *ngFor="let route of routes"
+          mat-list-item
+          [routerLink]="route.path"
+          (click)="sidenav.toggle()"
+        >
+          {{ route.label }}</a
+        > -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="dashboard">
+        <section class="banner">
+          <div class="container">
+            <mat-grid-list cols="2" gutterSize="15px">
+              <mat-grid-tile>
+                <app-todos></app-todos>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <img src="./assets/images/to-do-img.svg" alt="banner-img"/> 
+              </mat-grid-tile>
+            </mat-grid-list>
 
+            <!-- <mat-grid-list cols="2">
+              <mat-grid-tile
+                  *ngFor="let tile of tiles"
+                  
+                  
+                  [style.background]="tile.color">
+                {{tile.text}}
+              </mat-grid-tile>
+            </mat-grid-list> -->
+          </div>
+        </section>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>
 
+<footer>
+  <app-footer></app-footer>
+</footer>

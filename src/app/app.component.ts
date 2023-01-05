@@ -9,5 +9,13 @@ import { routes } from './app.module';
 export class AppComponent {
   title = 'Todo App';
   routes = routes;
-  isDarkTheme:boolean = true;
+  isDarkTheme:boolean = false;
+
+  ngOnInit() {
+    this.isDarkTheme = localStorage.getItem('theme') === 'Dark' ? true : false;
+  }
+
+  storeThemeSelection(){
+    localStorage.setItem('theme', this.isDarkTheme? 'Dark' : 'Light');
+  }
 }

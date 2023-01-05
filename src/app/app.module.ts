@@ -10,12 +10,11 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './Component/footer/footer.component';
 
-
-export const routes =  [
-  { path: 'accounts', component: TodosComponent , label: 'Accounts' },
-  { path: 'contacts', component: TodosComponent , label: 'Contacts' },
-  { path: 'activities', component: TodosComponent , label: 'Activities' }
- ];
+export const routes = [
+  // { path: 'accounts', component: TodosComponent , label: 'Accounts' },
+  // { path: 'contacts', component: TodosComponent , label: 'Contacts' },
+  // { path: 'activities', component: TodosComponent , label: 'Activities' }
+];
 
 @NgModule({
   declarations: [AppComponent, TodosComponent, FooterComponent],

@@ -1,8 +1,10 @@
-
 .example-spacer {
-    flex: 1 1 auto;
-  }
-  mat-sidenav {
-    // width: 200px;
-    // height: 100vh;
+  flex: 1 1 auto;
+}
+mat-sidenav {
+  width: 200px;
+  // height: 100vh;
+}
+::ng-deep mat-slide-toggle label mat-icon {
+  color: #fff;
 }

@@ -1,0 +1,42 @@
+@use "@angular/material" as mat;
+
+@mixin utility-mixin($to-do-app-theme) {
+  // Color
+  $foreground: map-get($to-do-app-theme, foreground);
+  $background: map-get($to-do-app-theme, background);
+
+  .primary {
+    color: mat.get-color-from-palette($to-do-app-primary);
+  }
+
+  .accent {
+    color: mat.get-color-from-palette($to-do-app-accent);
+  }
+
+  .warn {
+    color: mat.get-color-from-palette($to-do-app-warn);
+  }
+
+  .bg_primary {
+    background: mat.get-color-from-palette($foreground, base);
+    color: mat.get-color-from-palette($background, status-bar);
+  }
+
+  // Width
+
+  .full-width {
+    width: 100%;
+  }
+
+  // Container
+  .container {
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  section:nth-child(odd) {
+    // background: lavender;
+    background: mat.get-color-from-palette($to-do-app-primary, 0.3);
+  }
+}

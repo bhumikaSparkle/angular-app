@@ -1,0 +1,24 @@
+// host apply css to component here is <app-todos>
+:host {
+  width: 100%;
+}
+
+.form_card {
+  background: transparent;
+  box-shadow: none;
+
+  .mat-mdc-card-header {
+    margin-bottom: 30px;
+    .mat-mdc-card-title {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .mdc-text-field {
+      border-radius: 15px;
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled)
+      .mdc-line-ripple::before {
+      border-bottom: none;
+    }
+  }
+}
